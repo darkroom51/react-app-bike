@@ -45,10 +45,10 @@ class App extends Component {
                             menuElements={this.state.menuElements}/>
 
                         <Route path="/" exact={true} component={Dashboard}/>
-                        <Route path="/bike-list" component={FoodList}/>
+                        <Route path="/bike-list" component={BikeList}/>
                         <Route path="/bike-favourites" component={Favourites}/>
-                        <Route path="/bike-add" component={FoodAdd}/>
-                        <Route path="/bike-details" component={FoodDetails}/>
+                        <Route path="/bike-add" component={BikeAdd}/>
+                        <Route path="/bike-details" component={BikeDetails}/>
                     </div>
                 </BrowserRouter>
             </MuiThemeProvider>
