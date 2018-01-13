@@ -7,6 +7,7 @@ class AppBar extends Component {
             <MuiAppBar
                 title="Always Red Bike"
                 onLeftIconButtonClick={this.props.butt}
+                style={{backgroundColor:'#D32F2F'}}
             />
         )
     }

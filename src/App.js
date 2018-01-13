@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route} from 'react-router-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import {BrowserRouter, Route} from 'react-router-dom';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Paper from 'material-ui/Paper';
 
 import BikeList from './BikeList'
 import BikeAdd from './BikeAdd'
@@ -9,9 +12,9 @@ import Favourites from './Favourites'
 import BikeDetails from "./BikeDetails"
 import AppBar from './AppBar'
 import SideBar from './SideBar'
+import BottomNavBar from './BottomNavBar'
 
 import './index.css'
-
 
 
 class App extends Component {
@@ -35,9 +38,9 @@ class App extends Component {
 
     render() {
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                 <BrowserRouter>
-                    <div>
+                    <Paper zDepth={2}>
                         <AppBar butt={this.drawerToggle}/>
                         <SideBar
                             isOpen={this.state.isDrawerOpen}
@@ -49,7 +52,8 @@ class App extends Component {
                         <Route path="/bike-favourites" component={Favourites}/>
                         <Route path="/bike-add" component={BikeAdd}/>
                         <Route path="/bike-details" component={BikeDetails}/>
-                    </div>
+                        <BottomNavBar/>
+                    </Paper>
                 </BrowserRouter>
             </MuiThemeProvider>
 
